@@ -2,9 +2,9 @@ local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local plr = game.Players.LocalPlayer
 
 local Window = Rayfield:CreateWindow({
-   Name = "Simple UI V2",
+   Name = "Universal Modification Script V1 by maksat_rel/SomeGuy",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Loading Simple UI V2...",
+   LoadingTitle = "Loading...",
    LoadingSubtitle = "by SomeGuy",
    Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
@@ -38,22 +38,22 @@ local Window = Rayfield:CreateWindow({
 local PlayerTab = Window:CreateTab("Player", 18854842235) -- Title, Image
 local Slider = PlayerTab:CreateSlider({
    Name = "Speed",
-   Range = {1, 999},
+   Range = {16, 400},
    Increment = 1,
    Suffix = "Your Speed Value",
    CurrentValue = 16,
-   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "SSLider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
    plr.Character:WaitForChild("Humanoid").WalkSpeed = Value
    end,
 })
 local JPSlider = PlayerTab:CreateSlider({
    Name = "JumpPower",
-   Range = {0, 999},
+   Range = {60, 400},
    Increment = 1,
    Suffix = "jump go brr",
    CurrentValue = 60,
-   Flag = "Slider2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Flag = "JSlider", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
    plr.Character:WaitForChild("Humanoid").JumpPower = Value
    end,
@@ -64,7 +64,7 @@ local SITButton = PlayerTab:CreateButton({
    Rayfield:Notify({
    Title = "Working Alert",
    Content = "If you see this, the function (Sit) worked.",
-   Duration = 6,
+   Duration = 4,
    Image = 4483362458,
    })
    plr.Character:WaitForChild("Humanoid").Sit = true
@@ -76,7 +76,7 @@ local FLYButton = PlayerTab:CreateButton({
    Rayfield:Notify({
    Title = "Working Alert",
    Content = "If you see this, weeeeeeeeeee",
-   Duration = 6,
+   Duration = 4,
    Image = 4483362458,
    })
    loadstring(game:HttpGet("https://pastebin.com/raw/eQA4nfcw"))()
@@ -114,6 +114,24 @@ local JOButton = FETab:CreateButton({
 local KButton = FETab:CreateButton({
    Name = "Kill Yourself (can kill others if there is stroller item in game)",
    Callback = function()
-   plr.Character:WaitForChild("HumanoidRootPart").Position = 0, -9999, 0
+   plr.Character:WaitForChild("HumanoidRootPart").Position = Vector3.new(0, -9999, 0)
+   end,
+})
+
+local NDSTab = Window:CreateTab("💀 Natural Disaster Survival 🏝️", 4483362458) -- Title, Image
+local MainNDSSection = NDSTab:CreateSection("Main")
+local NDSTPDropdown = NDSTab:CreateDropdown({
+   Name = "Teleport",
+   Options = {"Lobby","Island"},
+   CurrentOption = {"Lobby"},
+   MultipleOptions = false,
+   Flag = "Dropdown", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Options)
+   if CurrentOption = Island then
+				print("skibdi")
+          end
+		else
+			print("HAHA")
+			
    end,
 })
